@@ -1,0 +1,103 @@
+
+        
+
+        .navbar {
+          font-family: 'Muli',sans-serif;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        a{
+            text-decoration: none;
+        }
+       
+       html{
+        scroll-padding: 6rem;
+        scroll-behavior: smooth;
+
+       }
+        .names {
+            
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding-right: 20px;
+            margin-right: 0px;
+            font-size: medium;
+
+
+        }
+        .names a{
+            color:black;
+            padding-right: 50px;
+            font-size: 16px;
+            font-weight:bold;
+        }
+        .names a:hover{
+            color:red;
+        }
+        
+    .logo img{
+        margin-left: 70px;
+        object-fit: contain;
+       
+    }
+    button{
+        border-radius: 6px 6px 6px 6px;
+        padding: 10px 40px 10px 40px;
+        background-color:black;
+        color: white;
+        font-size: 15px;
+    }
+    .fixed-headerr{
+        position: fixed;
+        top: 0;
+    left: 0;
+    width: 100%;
+    background-color:#0077B6;
+    color: #fff; /* You can set the text color of your header */
+    padding: 1px; /* Adjust the padding as needed */
+    z-index: 1;
+    }
+    main{
+        font-family: 'Muli',sans-serif;
+        background-color:rgb(210, 230, 251);
+        padding-top: 5%;
+        margin:0%;
+      }
+      .d1{
+        margin-bottom: 30%;
+      }
+      .centre img{
+        border-radius: 50%;
+        border: 3px solid rgb(72,202,228);
+        
+        /*filter: invert(21%) sepia(38%) saturate(5151%) hue-rotate(192deg) brightness(92%) contrast(102%);*/
+      }
+    .centre img:hover{
+    filter: invert(92%) sepia(9%) saturate(101%) hue-rotate(169deg) brightness(99%) contrast(90%);
+    }
+       
+      .centre{
+        
+      height: 320px;
+        display:flex;
+    justify-content:center;
+    align-items: center;
+    background-color: rgb(210, 230, 251);
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-bottom: 20px;
+      }
+    div.centre>div> p{
+        font-size: 25px;
+        text-align: center;
+        margin-top: 10%;
+        padding: 3px;
+        display: grid;
+    
+      }
+      

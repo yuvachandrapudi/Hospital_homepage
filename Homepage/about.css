@@ -1,0 +1,16 @@
+.aboutu img{
+    float:left;
+    width: 600px;
+    height:400px
+}
+.aboutu{
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+.aboutu h1{
+    text-align: center;
+}
+p{
+    padding: auto;
+}

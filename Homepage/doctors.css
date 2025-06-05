@@ -1,0 +1,18 @@
+.container-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:15px;
+    margin-top: 3%;
+    margin-left:5%;
+}
+img{
+    object-fit: cover;
+    aspect-ratio: 1/4;
+ 
+}
+.container-1 div{
+  width: 400px;
+  height: 575px;
+
+}

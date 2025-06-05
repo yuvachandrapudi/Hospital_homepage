@@ -1,0 +1,44 @@
+.maindiv{
+	width: 80%;
+	height: 520px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+    margin-bottom:50%;
+	transform: translate(-50%,-50%);
+	background-image: url(img/slide-1.jpg);
+	background-size: 100% 80%;
+	background-repeat: no-repeat;
+    animation: slider 25s infinite linear;
+}
+@keyframes slider {
+	0%{background-image: url(img/slide-1.jpg);}
+	20%{background-image: url(img/slide-2.jpg);}
+	40%{background-image: url(img/slide-3.png);}
+	60%{background-image: url(img/slide-4.png);}
+	80%{background-image: url(img/slide-5.png);}
+	100%{background-image: url(img/slide-6.jpg);}
+}
+.slide1 {
+	background-image: url("img/slide-1.jpg");
+	
+}
+
+.slide2 {
+	background-image: url("img/slide-2.jpg");
+}
+
+.slide3 {
+	background-image: url("img/slide-3.png");
+	background-size: auto;
+	
+}
+.slide4 {
+	background-image: url("img/slide-4.png");
+}
+.slide5 {
+	background-image: url("img/slide-5.png");
+}
+.slide6 {
+	background-image: url("img/slide-6.jpg");
+}

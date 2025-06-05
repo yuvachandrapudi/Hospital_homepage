@@ -1,0 +1,29 @@
+
+  .container-3{
+    margin-top: 0%;
+display: flex;
+justify-content:flex-start;
+align-items: center;
+gap:50px;
+background-image: url('./img/footer-bg.png');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  margin-left: 5%;
+    margin-right: 5%;
+  }
+
+
+  .container-3>.contact-4,.contact-5{
+    width: 200px;
+  }
+ .container-3 p{
+  margin: 7px;
+ }
+ .contact-1{
+  margin-top: 1%;
+ }
+
+h4{
+     
+      font-size:20px;
+  }

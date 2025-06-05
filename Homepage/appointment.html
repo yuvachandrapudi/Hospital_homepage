@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Appointment</title>
+  <link rel="website icon" type="png" href="./img/Healthylife.jpg" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: black;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 9px;
+      box-shadow: rgba(252, 65, 130, 0.2) 0 15px 30px -5px;
+    }
+
+    .bg {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .background-clip {
+      object-fit: cover;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      top: 2%;
+      z-index: -1;
+      opacity: 0.8;
+    }
+
+    .header {
+      text-align: center;
+      color: darkred;
+      margin-bottom: 20px;
+    }
+
+    form {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      width: 400px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      color: whitesmoke;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: linear-gradient(to right, #434343, black);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: linear-gradient(to top, #c4c5c7, #dcdddf, #ebebeb);
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg">
+    <video id="video1" autoplay loop muted class="background-clip">
+      <source src="./img/hospital.mp4" type="video/mp4" />
+    </video>
+
+    <form action="save_appointment.php" method="POST">
+      <div class="header">
+        <h2><b>Book an Appointment</b></h2>
+      </div>
+      
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" placeholder="Enter your age" required>
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="" disabled selected>Select your gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Others">Others</option>
+      </select>
+
+      <label for="phone">Contact Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your contact number" required>
+
+      <label for="date">Preferred Appointment Date:</label>
+      <input type="date" id="date" name="date" required min="" required>
+
+      <label for="time">Time:</label>
+      <input type="time" id="time" name="time" required min="09:00" max="22:00">
+
+      <label for="procedure_name">Procedure:</label>
+      <select id="procedure_name" name="procedure_name" required>
+        <option value="" disabled selected>Select procedure</option>
+        <option value="Medical Examination">Medical Examination</option>
+        <option value="Result Analysis">Result Analysis</option>
+        <option value="Check-up">Casual Check-up</option>
+      </select>
+
+      <label for="department">Department:</label>
+      <select id="department" name="department" required>
+        <option value="" disabled selected>Select department</option>
+        <option value="Cardiology">Cardiology</option>
+        <option value="Orthopedics">Orthopedics</option>
+        <option value="Neurology">Neurology</option>
+        <option value="Urology">Urology</option>
+        <option value="Gastroenterology">Gastroenterology</option>
+      </select>
+
+      <button type="submit">Schedule Appointment</button>
+    </form>
+  </div>
+
+  <script>
+    // Function to set the minimum date to tomorrow
+    function setMinDate() {
+      const dateInput = document.getElementById("date");
+      const today = new Date();
+      today.setDate(today.getDate() + 1); // Move to tomorrow
+      const minDate = today.toISOString().split("T")[0]; // Format as YYYY-MM-DD
+      dateInput.min = minDate;
+    }
+  
+    // Run function when page loads
+    window.onload = setMinDate;
+
+    document.getElementById("time").addEventListener("change", function () {
+    let timeInput = this.value;
+    let [hours, minutes] = timeInput.split(":").map(Number);
+
+    // Convert to 24-hour format
+    let validTime =
+      (hours >= 9 && hours < 12) || // 9 AM to 12 PM
+      (hours >= 14 && hours < 22);  // 2 PM to 10 PM
+
+    if (!validTime) {
+      alert("Please select a time between 9 AM - 12 PM or 2 PM - 10 PM.");
+      this.value = ""; // Clear invalid input
+    }
+  });
+  </script>
+  
+</body>
+</html>  
